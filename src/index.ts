@@ -1,12 +1,10 @@
 ﻿import * as t from '@babel/types';
 import node_path from 'path';
 
-// Define plugin options interface
 interface PluginOptions {
   enableInProduction?: boolean;
 }
 
-// type 
 export default function babelPluginAntdStyle(api: any, options: PluginOptions = {}) {
   const { enableInProduction = false } = options;
   if (process.env.NODE_ENV === 'production' && !enableInProduction) {
